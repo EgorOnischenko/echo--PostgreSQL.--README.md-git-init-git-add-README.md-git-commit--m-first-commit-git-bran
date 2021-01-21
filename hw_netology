@@ -1,0 +1,17 @@
+create table if not exists Artist(
+	Id serial primary key,
+	Name varchar (50) not null
+	
+);
+create table if not exists  Album (
+	id serial primary key,
+	Name varchar (200) not null,
+	Year_of_Release decimal (4) null,
+	Album_id integer references Album(Id)
+);
+create table if not exists Song(
+	Id serial primary key,
+	Artist varchar (60) not null,
+	Song_duration integer not null
+	
+);
